@@ -27,6 +27,11 @@ services:
     arguments: ['@entity_type.bundle.info', '@entity_type.repository', '@plugin.manager.og.fields']
     tags:
       - { name: drupal.command }
+  og.og_add_group:
+    class: Drupal\og\Command\OgAddGroupCommand
+    arguments: ['@entity_type.bundle.info', '@entity_type.repository', '@og.group_type_manager']
+    tags:
+      - { name: drupal.command }
   og.context:
     class: Drupal\og\ContextProvider\OgContext
     arguments: ['@plugin.manager.og.group_resolver', '@config.factory']
